@@ -1,23 +1,32 @@
-import logo from './logo.svg';
+
 import './App.css';
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
+import { Header, ImageList, Navbar } from './components';
 
 function App() {
+  const url = 'https://cdn.pixabay.com/photo/2018/06/03/21/50/milky-way-3451655__340.jpg'
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <Container maxWidth="xl">
+        <Box 
+            sx={{
+              position: 'relative',
+              backgroundImage: `url(${url})`,
+              backgroundPosition: 'center',
+              backgroundSize: 'cover',
+              height: '100vh' 
+              }}
+         >
+          <Navbar/>
+          <Header/>
+          <ImageList/>
+         </Box>
+      </Container>
+
     </div>
   );
 }
